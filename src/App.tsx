@@ -12,6 +12,7 @@ function App() {
       <Avatar
         url="https://avatars.githubusercontent.com/u/62358703?v=4"
         label="Avatar"
+        size="lg"
       />
       <Input />
     </div>
