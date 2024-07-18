@@ -1,17 +1,17 @@
-import { FC } from "react";
+import { FC,ButtonHTMLAttributes,HtmlHTMLAttributes } from "react";
 import "./Button.css";
 
 type variant = "primary" | "secondary";
 
-interface Props {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement>{
   label?: string;
   variant?: variant;
 }
-const Button: FC<Props> = ({ label, variant }) => {
+const Button: FC<Props> = ({ label, variant, ...Props }) => {
   const style = "button_" + variant;
   return (
     <>
-      <button className={style}>{label}</button>
+      <button className={style} {...Props}>{label}</button>
     </>
   );
 };
