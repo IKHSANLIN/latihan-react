@@ -14,7 +14,29 @@ function App() {
         label="Avatar"
         size="lg"
       />
-      <Input />
+      <Avatar
+        url="https://avatars.githubusercontent.com/u/62358703?v=4"
+        label="Avatar"
+        size="sm"
+      />
+      <Input type="email" placeholder="email" />
+      <br />
+      <br />
+      <Input type="password" placeholder="password" />
+      <br />
+      <br />
+      <Input type="number" placeholder="Masukan umur anda" />
+      <br />
+      <br />
+      <Input type="date" placeholder="Masukan tanggal lahir anda" />
+      <br />
+      <br />
+      <Input
+        placeholder="username"
+        onChange={(e) => {
+          console.log(e.target.value);
+        }}
+      />
     </div>
   );
 }
