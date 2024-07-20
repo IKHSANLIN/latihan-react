@@ -6,6 +6,8 @@ import StateInput from "./features/state-input/StateInput";
 import { ChangeEvent, useState } from "react";
 import ContohList from "./features/list/List";
 import ContohList2 from "./features/list/List";
+import LatihanForm from "./components/form/LatihanForm";
+import LatihanForm2 from "./components/form/LatihanForm2";
 
 function App() {
   // const handleClickButton = () => {
@@ -25,6 +27,8 @@ function App() {
   // }
   return (
     <div className="App">
+      <LatihanForm2 />
+      {/* <LatihanForm /> */}
       {/* <h1>{show ? "Tampilkan" : "default"}</h1> */}
       {/* <Button
         label="Button primary"
