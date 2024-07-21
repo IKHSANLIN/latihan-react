@@ -1,4 +1,4 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useEffect } from "react";
 import { useState } from "react";
 import Input from "../input/Input";
 import "./LatihanForm.css";
@@ -18,8 +18,43 @@ const LatihanFrom2 = () => {
   const [form, setForm] = useState<Biodata>(defaultState);
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(form);
+    fetch("http://localhost:3001/biodata", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    })
+      .then((res) => {
+        // alert(`Berhasil menambahkan data ${res.status}`);
+        getData();
+      })
+      .catch((err) => {
+        alert(`Gagal menambahkan data ${err}`);
+      });
   };
+  const [biodata, setBiodata] = useState<Biodata[]>();
+  const getData = async () => {
+    const data = await fetch("http://localhost:3001/biodata", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .catch((err) => {
+        alert(`Gagal mengambil data ${err}`);
+      });
+    if (data) {
+      setBiodata(data);
+    }
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <>
       <form action="" onSubmit={handleSubmit} className="latihan_form">
@@ -56,9 +91,13 @@ const LatihanFrom2 = () => {
           <Button label="Submit" />
         </div>
       </form>
-      <h3>{form.nama}</h3>
-      <h3>{form.email}</h3>
-      <h3>{form.phone}</h3>
+      <ul>
+        {biodata?.map((item, index) => (
+          <li key={index}>
+            {item.nama} - {item.email} - {item.phone}
+          </li>
+        ))}
+      </ul>
     </>
   );
 };
