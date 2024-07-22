@@ -1,9 +1,9 @@
-import Biodata from "./features/latihan-usecontext/Biodata";
+import LatihanUseref from "./features/latihan-useref/latihanUseref";
 
 function App() {
   return (
     <div>
-      <Biodata />
+      <LatihanUseref />
     </div>
   );
 }
