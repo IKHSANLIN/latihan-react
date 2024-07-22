@@ -1,8 +1,8 @@
 import React, { FormEvent, useEffect } from "react";
 import { useState } from "react";
-import Input from "../input/Input";
+import Input from "../../components/input/Input";
 import "./LatihanForm.css";
-import Button from "../button/Button";
+import Button from "../../components/button/Button";
 
 interface Biodata {
   nama: string;
@@ -30,7 +30,7 @@ const LatihanFrom2 = () => {
         getData();
       })
       .catch((err) => {
-        alert(`Gagal menambahkan data ${err}`);
+        console.log(err);
       });
   };
   const [biodata, setBiodata] = useState<Biodata[]>();
