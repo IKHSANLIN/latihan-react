@@ -11,7 +11,13 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input: FC<InputProps> = ({ type, placeholder, value, ...props }) => {
   return (
     <div className="input">
-      <input type={type} placeholder={placeholder} value={value} {...props} />
+      <input
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        {...props}
+      />
     </div>
   );
 };

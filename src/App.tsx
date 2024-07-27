@@ -1,18 +1,17 @@
-// import TanpaUsecallback from "./features/latihan-usecallback/Tanpa-Usecallback";
-// import WithUsecallback from "./features/latihan-usecallback/WithUsecallback";
-// import LatihanUseref from "./features/latihan-useref/latihanUseref";
-
-import TanpaUsemomo from "./features/latihan-usememo/Tanpa-Usememo";
-import WithUsememo from "./features/latihan-usememo/WithUsememo";
+import { Card, CardBody, Button, Box } from "@chakra-ui/react";
 
 function App() {
   return (
-    <div>
-      {/* <LatihanUseref /> */}
-      {/* <TanpaUsecallback /> */}
-      {/* <WithUsecallback /> */}
-      {/* <TanpaUsemomo /> */}
-      <WithUsememo />
+    <div className="app">
+      <Box maxW="lg" m={10}>
+        <Card className="card">
+          <CardBody>
+            <Button size="md" variant={"solid"} colorScheme={"teal"}>
+              Masuk
+            </Button>
+          </CardBody>
+        </Card>
+      </Box>
     </div>
   );
 }
