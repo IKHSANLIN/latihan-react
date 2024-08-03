@@ -1,16 +1,11 @@
-import { Card, CardBody, Button, Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import ContohForm2 from "./features/latihan-chakraui/ContohForm2";
 
 function App() {
   return (
     <div className="app">
       <Box maxW="lg" m={10}>
-        <Card className="card">
-          <CardBody>
-            <Button size="md" variant={"solid"} colorScheme={"teal"}>
-              Masuk
-            </Button>
-          </CardBody>
-        </Card>
+        <ContohForm2 />
       </Box>
     </div>
   );
